@@ -7,7 +7,7 @@ from connection.postgres import connect_to_db
 
 
 # Initialize variables
-dataset_url = "https://media.githubusercontent.com/media/alfianhid/Building-a-Data-Warehousing-Pipeline-using-Python-Docker-Airflow-PostgreSQL-and-dbt/master/data/orders_dataset.csv"
+dataset_url = "https://media.githubusercontent.com/media/alfianhid/Building-a-Data-Warehousing-Pipeline-using-Python-Docker-Airflow-PostgreSQL-and-dbt/master/data/raw/orders_dataset.csv"
 columns = ['order_id',
            'customer_id',
            'order_status',

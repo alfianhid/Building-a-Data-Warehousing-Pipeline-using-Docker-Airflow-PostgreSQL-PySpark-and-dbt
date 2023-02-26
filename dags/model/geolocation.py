@@ -7,7 +7,7 @@ from connection.postgres import connect_to_db
 
 
 # Initialize variables
-dataset_url = "https://media.githubusercontent.com/media/alfianhid/Building-a-Data-Warehousing-Pipeline-using-Python-Docker-Airflow-PostgreSQL-and-dbt/master/data/geolocation_dataset.csv"
+dataset_url = "https://media.githubusercontent.com/media/alfianhid/Building-a-Data-Warehousing-Pipeline-using-Python-Docker-Airflow-PostgreSQL-and-dbt/master/data/raw/geolocation_dataset.csv"
 columns = ['geolocation_zip_code_prefix',
            'geolocation_lat',
            'geolocation_lng',
