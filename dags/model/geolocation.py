@@ -13,18 +13,13 @@ columns = ['geolocation_zip_code_prefix',
            'geolocation_lng',
            'geolocation_city',
            'geolocation_state']
-datatypes = {'geolocation_zip_code_prefix': pd.Int16Dtype,
-           'geolocation_lat': pd.Float32Dtype,
-           'geolocation_lng': pd.Float32Dtype,
-           'geolocation_city': pd.StringDtype,
-           'geolocation_state': pd.StringDtype}
 
 
 # Define ETL methods
 @logger
 def extract_dataset(dataset_url):
     print(f"Reading dataset from {dataset_url}...")
-    df = pd.read_csv(dataset_url, names=columns, dtype=datatypes)
+    df = pd.read_csv(dataset_url, names=columns)
     return df
 
 @logger

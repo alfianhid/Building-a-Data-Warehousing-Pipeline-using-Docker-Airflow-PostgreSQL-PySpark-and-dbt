@@ -15,21 +15,13 @@ columns = ['order_id',
            'shipping_limit_date',
            'price',
            'freight_value']
-datatypes = {'order_id': pd.StringDtype,
-           'order_item_id': pd.Int16Dtype,
-           'product_id': pd.StringDtype,
-           'seller_id': pd.StringDtype,
-           'shipping_limit_date': pd.StringDtype,
-           'price': pd.Float32Dtype,
-           'freight_value': pd.Float32Dtype}
-datetime_columns = ['shipping_limit_date']
 
 
 # Define ETL methods
 @logger
 def extract_dataset(dataset_url):
     print(f"Reading dataset from {dataset_url}...")
-    df = pd.read_csv(dataset_url, names=columns, dtype=datatypes, parse_dates=datetime_columns)
+    df = pd.read_csv(dataset_url, names=columns)
     return df
 
 @logger

@@ -16,26 +16,13 @@ columns = ['order_id',
            'order_delivered_carrier_date',
            'order_delivered_customer_date',
            'order_delivered_delivery_date']
-datatypes = {'order_id': pd.StringDtype,
-           'customer_id': pd.StringDtype,
-           'order_status': pd.StringDtype,
-           'order_purchase_timestamp': pd.StringDtype,
-           'order_approved_at': pd.StringDtype,
-           'order_delivered_carrier_date': pd.StringDtype,
-           'order_delivered_customer_date': pd.StringDtype,
-           'order_delivered_delivery_date': pd.StringDtype}
-datetime_columns = ['order_purchase_timestamp',
-                    'order_approved_at',
-                    'order_delivered_carrier_date',
-                    'order_delivered_customer_date',
-                    'order_delivered_delivery_date']
 
 
 # Define ETL methods
 @logger
 def extract_dataset(dataset_url):
     print(f"Reading dataset from {dataset_url}...")
-    df = pd.read_csv(dataset_url, names=columns, dtype=datatypes, parse_dates=datetime_columns)
+    df = pd.read_csv(dataset_url, names=columns)
     return df
 
 @logger

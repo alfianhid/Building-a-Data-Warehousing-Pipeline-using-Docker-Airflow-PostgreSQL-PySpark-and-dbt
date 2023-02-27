@@ -13,18 +13,13 @@ columns = ['order_id',
            'payment_type',
            'payment_installments',
            'payment_value']
-datatypes = {'order_id': pd.StringDtype,
-           'payment_sequential': pd.Int16Dtype,
-           'payment_type': pd.StringDtype,
-           'payment_installments': pd.Int16Dtype,
-           'payment_value': pd.Float32Dtype}
 
 
 # Define ETL methods
 @logger
 def extract_dataset(dataset_url):
     print(f"Reading dataset from {dataset_url}...")
-    df = pd.read_csv(dataset_url, names=columns, dtype=datatypes)
+    df = pd.read_csv(dataset_url, names=columns)
     return df
 
 @logger

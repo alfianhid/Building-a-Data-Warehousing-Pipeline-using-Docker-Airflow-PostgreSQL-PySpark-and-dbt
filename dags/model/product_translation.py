@@ -10,15 +10,13 @@ from connection.postgres import connect_to_db
 dataset_url = "https://media.githubusercontent.com/media/alfianhid/Building-a-Data-Warehousing-Pipeline-using-Python-Docker-Airflow-PostgreSQL-and-dbt/master/data/raw/product_category_name_translation.csv"
 columns = ['product_category_name',
            'product_category_name_english']
-datatypes = {'product_category_name': pd.StringDtype,
-           'product_category_name_english': pd.StringDtype}
 
 
 # Define ETL methods
 @logger
 def extract_dataset(dataset_url):
     print(f"Reading dataset from {dataset_url}...")
-    df = pd.read_csv(dataset_url, names=columns, dtype=datatypes)
+    df = pd.read_csv(dataset_url, names=columns)
     return df
 
 @logger

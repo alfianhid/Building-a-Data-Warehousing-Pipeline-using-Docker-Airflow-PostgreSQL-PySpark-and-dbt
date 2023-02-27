@@ -17,22 +17,13 @@ columns = ['product_id',
            'product_length_cm',
            'product_height_cm',
            'product_width_cm']
-datatypes = {'product_id': pd.StringDtype,
-             'product_category_name': pd.StringDtype,
-             'product_name_lenght': pd.Int16Dtype,
-             'product_description_lenght': pd.Int16Dtype,
-             'product_photos_qty': pd.Int16Dtype,
-             'product_weight_g': pd.Int16Dtype,
-             'product_length_cm': pd.Int16Dtype,
-             'product_height_cm': pd.Int16Dtype,
-             'product_width_cm': pd.Int16Dtype}
 
 
 # Define ETL methods
 @logger
 def extract_dataset(dataset_url):
     print(f"Reading dataset from {dataset_url}...")
-    df = pd.read_csv(dataset_url, names=columns, dtype=datatypes)
+    df = pd.read_csv(dataset_url, names=columns)
     return df
 
 @logger

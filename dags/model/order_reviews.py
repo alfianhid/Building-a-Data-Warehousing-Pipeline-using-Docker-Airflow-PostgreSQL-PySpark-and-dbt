@@ -16,21 +16,13 @@ columns = ['review_id',
            'review_comment_message',
            'review_creation_date',
            'review_answer_timestamp']
-datatypes = {'review_id': pd.StringDtype,
-           'order_id': pd.StringDtype,
-           'review_score': pd.Int16Dtype,
-           'review_comment_title': pd.StringDtype,
-           'review_comment_message': pd.StringDtype,
-           'review_creation_date': pd.StringDtype,
-           'review_answer_timestamp': pd.StringDtype}
-datetime_columns = ['review_creation_date','review_answer_timestamp']
 
 
 # Define ETL methods
 @logger
 def extract_dataset(dataset_url):
     print(f"Reading dataset from {dataset_url}...")
-    df = pd.read_csv(dataset_url, names=columns, dtype=datatypes, parse_dates=datetime_columns)
+    df = pd.read_csv(dataset_url, names=columns)
     return df
 
 @logger
